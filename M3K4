@@ -1,0 +1,15 @@
+function [ dy ] = M3K4( time, y)
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+m1 = .50; m2=.60; m3=.55; k1 = 3.00; k2 = 3.3; k3 = 2.7; k4 = 2.9;
+dy1 = y(2);
+dy2 = (-k1*y(1) + k2*(y(3)-y(1)))/m1;
+dy3 = y(4);
+dy4 = (-k2*(y(3)-y(1)) + k3*(y(5) - y(3)))/m2;
+dy5 = y(6);
+dy6 = (-k3*(y(5) - y(3)) - k4*(y(5)))/m3;
+dy = [dy1 dy2 dy3 dy4 dy5 dy6].';
+
+
+end
+
